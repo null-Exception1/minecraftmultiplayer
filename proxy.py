@@ -15,18 +15,27 @@ s.connect((ip,50853))
 s.settimeout(1.0)
 cs.settimeout(1.0)
 
+ping = b'\x1b'
 while True:
     try:
-        recved = cs.recv(4096)
-        #print(recved)
-        s.send(recved)
-    except socket.timeout:
-        pass
-    try:
-        recved = s.recv(4096)
-        #print(recved)
+        try:
+            recved = cs.recv(4096)
+            
+            if recved[0] == 27:
+                print("probs a ping to server",recved[1:100])
+                
+            print("client",recved[:100])
+            s.send(recved)
+        except socket.timeout:
+            pass
+        try:
+            recved = s.recv(4096)
+            print("server",recved[:100])
 
-        cs.send(recved)
-    except socket.timeout:
-        pass
-
+            cs.send(recved)
+        except socket.timeout:
+            pass
+    except KeyboardInterrupt:
+        s.close()
+        cs.close()
+        break
