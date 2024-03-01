@@ -94,6 +94,7 @@ the packet is 11 bytes long (excluding first byte) and looks something like this
 
 
 `40204eab2feef243 4053800000000000 c0596a896c563537` - x,y,z
+
 `c3d73926 41cea6bd01` - yaw, pitch
 
 
