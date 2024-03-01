@@ -61,17 +61,29 @@ the rotation is a bit weird though, but ill still explain it
 
 the packet is 11 bytes long and looks something like this
 
-b'0b0016c7ff6904bf6c081101' (hexdigested)
+b'0b0016c7ff6904bf6c081101' (spaced for clarity)
 
 0b 0016 c7ff6904 bf6c0811 01
 
 0b is the packet length, 0016 is packet type (rotation)
 
-c7ff6904 - x rotation (IEEE 754 floating point number)
+c7ff6904 - x rotation (IEEE 754 floating point)
 
-bf6c0811 - y rotation (IEEE 754 floating point number)
+bf6c0811 - y rotation (IEEE 754 floating point)
 
-# '\x00\x14@' - means position packet
+# '0014' - means position packet
+
+1b 0014 4050a1f624125cff 4051800000000000 c040e19c28a94569 01(spaced for clarity)
+
+1b is packet length, 0014 is packet type (position).
+
+4050a1f624125cff - x (IEEE 754 double)
+
+4051800000000000 - y (IEEE 754 double)
+
+c040e19c28a94569 - z (IEEE 754 double)
+
+
 
 
 

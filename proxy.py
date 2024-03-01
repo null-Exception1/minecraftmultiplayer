@@ -10,7 +10,7 @@ cs, addr = d.accept()
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-ip = socket.gethostbyname('barbel.aternos.host')
+ip = socket.gethostbyname('flier.aternos.host')
 s.connect((ip,50853))
 #
 s.settimeout(0.2)
@@ -24,7 +24,10 @@ while True:
             length = recved[0]
 
             if length == 27:
-                #print("pos",binascii.hexlify(recved))
+                print("pos",binascii.hexlify(recved))
+                
+                x = binascii.hexlify(recved)[6:14]
+                
                 pass
             if length == 11:
                 #print("rot",binascii.hexlify(recved))
@@ -34,7 +37,7 @@ while True:
                 yaw = struct.unpack('>f',binascii.unhexlify(yaw)) # (IEEE 754 floating point number)
                 pitch = struct.unpack('>f',binascii.unhexlify(pitch)) # (IEEE 754 floating point number)
 
-                print('rot', yaw, pitch)
+                #print('rot', yaw, pitch)
 
                 pass
             s.send(recved)
