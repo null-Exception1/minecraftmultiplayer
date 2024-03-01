@@ -55,6 +55,7 @@ the 2nd and 3rd bytes are kind of like an instructor on what the packet is suppo
 
 i see how this can be useful if you want to not get ddosed with the client sending huge huge amount of packets.
 
+# client 
 # '0016' - means rotation packet
 
 the rotation is a bit weird though, but ill still explain it
@@ -83,6 +84,19 @@ bf6c0811 - y rotation (IEEE 754 floating point)
 
 c040e19c28a94569 - z (IEEE 754 double)
 
+# '0015' - means position + rotation packet
+
+b'23001540204eab2feef2434053800000000000c0596a896c563537c3d7392641cea6bd01'
+
+23 0015 40204eab2feef243 4053800000000000 c0596a896c563537 c3d73926 41cea6bd01 (spaced for clarity)
+
+23 - packet size
+
+0015 - packet type (pos + rot)
+
+
+40204eab2feef243 4053800000000000 c0596a896c563537 - x,y,z
+c3d73926 41cea6bd01 - yaw, pitch
 
 
 
