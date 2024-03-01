@@ -58,9 +58,7 @@ i see how this can be useful if you want to not get ddosed with the client sendi
 # client 
 # `'0016'` - means rotation packet
 
-the rotation is a bit weird though, but ill still explain it
-
-the packet is 11 bytes long and looks something like this
+the packet is 11 bytes long (excluding first byte) and looks something like this
 
 `b'0b0016c7ff6904bf6c081101'`
 
