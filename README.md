@@ -55,7 +55,7 @@ the 2nd and 3rd bytes are kind of like an instructor on what the packet is suppo
 
 i see how this can be useful if you want to not get ddosed with the client sending huge huge amount of packets.
 
-'\x00\x16' - means rotation packet
+# '\x00\x16' - means rotation packet
 
 the rotation is a bit weird though, but ill still explain it
 
@@ -76,7 +76,7 @@ here's the weirdest part: if i start turning clockwise over and over, you would 
 
 makes me want to overflow the x rotation with just turning over and over.
 
-'\x00\x14@' - means position packet
+# '\x00\x14@' - means position packet
 
 
 
