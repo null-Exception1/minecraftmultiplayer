@@ -38,7 +38,7 @@ while True:
                 #pass
             
             elif length == 11: # rot
-                
+
                 #print("rot",binascii.hexlify(recved))
                 yaw = binascii.hexlify(recved)[6:14]
                 pitch = binascii.hexlify(recved)[14:22]
@@ -64,6 +64,17 @@ while True:
                 pitch = struct.unpack('>f',binascii.unhexlify(pitch)) # (IEEE 754 floating point number)
 
                 #print('pos + rot', x ,y, z, yaw, pitch)
+            elif binascii.hexlify(recved) == b'03002f00':
+                #print('hits something')
+                pass
+            elif binascii.hexlify(recved).startswith(b'0600'):
+                if binascii.hexlify(recved).endswith(b'300'):
+                    #print('sprint start')
+                    pass
+                if binascii.hexlify(recved).endswith(b'400'):
+                    #print('sprint end')
+                    pass
+                pass
             else:
                 print("client ",binascii.hexlify(recved))
             s.send(recved)
