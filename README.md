@@ -47,3 +47,40 @@ so basically i wrote a localhost transmission proxy to monitor minecraft packets
 
 
 this should be pretty ez 
+
+
+first thing im discovering is that packet lengths are specified at the beginning of a packet, very noice very interesting.
+
+but just because length = 27 doesnt necessarily mean that the packet is a ping
+
+nvm length 27 turns out to be a packet that sends the position of the player.
+
+so we know that the first byte always specifies the length of the total packet
+
+the 2nd and 3rd bytes are kind of like an instructor on what the packet is supposed to be about
+
+'\x00\x16' - means rotation packet
+
+the rotation is a bit weird though, but ill still explain it
+the packet is 11 bytes long and looks something like this
+
+b'0b0016c7ff6904bf6c081101' (hexdigested)
+
+0b 0016 c7ff6904 bf6c0811 01
+
+0b is the packet length, 0016 is packet type (rotation)
+
+c7ff6904 - x rotation
+bf6c0811 - y rotation 
+
+there's a difference of 1440 for a turn of 180 degrees which is a bit too precise to be in a block game. 
+
+here's the weirdest part: if i start turning clockwise over and over, you would assume the x rotation to reset when it hits 360, because 0 comes after 360 in degrees. but nope. it adds up all the extra turns along with the super precise 360 degrees it's already sending. this is highly redundant and i dont know how this can be useful at all, maybe if there's a lot of lag then you could make use of this, but still this is too much precision.
+
+makes me want to overflow the x rotation with just turning over and over.
+
+'\x00\x14@' - means position packet
+
+
+
+
