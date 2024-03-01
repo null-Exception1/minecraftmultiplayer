@@ -11,7 +11,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 ip = socket.gethostbyname('barbel.aternos.host')
 s.connect((ip,50853))
-
+#
 s.settimeout(0.2)
 cs.settimeout(0.2)
 

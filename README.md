@@ -49,19 +49,16 @@ so basically i wrote a localhost transmission proxy to monitor minecraft packets
 this should be pretty ez 
 
 
-first thing im discovering is that packet lengths are specified at the beginning of a packet, very noice very interesting.
-
-but just because length = 27 doesnt necessarily mean that the packet is a ping
-
-nvm length 27 turns out to be a packet that sends the position of the player.
-
-so we know that the first byte always specifies the length of the total packet
+first thing im discovering is that packet lengths are specified at the beginning of a packet, very noice very interesting. looking at the minecraft wiki, i saw that the first byte always specifies the length of the total packet in the netcode.
 
 the 2nd and 3rd bytes are kind of like an instructor on what the packet is supposed to be about
+
+i see how this can be useful if you want to not get ddosed with the client sending huge huge amount of packets.
 
 '\x00\x16' - means rotation packet
 
 the rotation is a bit weird though, but ill still explain it
+
 the packet is 11 bytes long and looks something like this
 
 b'0b0016c7ff6904bf6c081101' (hexdigested)
