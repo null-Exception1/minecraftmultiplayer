@@ -61,9 +61,9 @@ the rotation is a bit weird though, but ill still explain it
 
 the packet is 11 bytes long and looks something like this
 
-b'0b0016c7ff6904bf6c081101' (spaced for clarity)
+b'0b0016c7ff6904bf6c081101' 
 
-0b 0016 c7ff6904 bf6c0811 01
+0b 0016 c7ff6904 bf6c0811 01 (spaced for clarity)
 
 0b is the packet length, 0016 is packet type (rotation)
 
