@@ -99,9 +99,9 @@ the packet is 11 bytes long (excluding first byte) and looks something like this
 
 # `03002f00` - player hits something (or nothing)
 
-# `06001ed80d0300` - player started sprinting
+# `0600` - player started sprinting if ends with `300`
 
-# `06001ed80d0400` - player stopped sprinting
+# `0600` - player stopped sprinting if ends with `400`
 
 
 
