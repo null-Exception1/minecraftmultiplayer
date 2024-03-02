@@ -56,7 +56,7 @@ the 2nd and 3rd bytes are kind of like an instructor on what the packet is suppo
 i see how this can be useful if you want to not get ddosed with the client sending huge huge amount of packets.
 
 # Client 
-
+---
 ### Rotation packet
 
 Eg.
@@ -68,6 +68,9 @@ Eg.
 - `yaw` (IEEE 754 float)
 - `pitch` (IEEE 754 float)
 
+> Only triggered when rotation is done without movement
+> A server packet is recieved for correction every couple seconds.
+
 ---
 ### Position packet
 
@@ -78,13 +81,15 @@ Eg.
 | ------ | ------ | ------ | ------ | ------ | ------ |
 | 1b | 0014 | 4050a1f624125cff | 4051800000000000 | c040e19c28a94569 | 01 |
 
-- `x` (IEEE 754 double)
+- `x` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
 
-- `y` (IEEE 754 double)
+- `y` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
 
-- `z` (IEEE 754 double)
+- `z` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
 
-
+> This is only triggered when movement happens without rotation.
+> A server packet is recieved for correction every couple seconds.
+---
 ### Position + Rotation packet
 
 Eg. 
@@ -93,27 +98,34 @@ Eg.
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | 1b | 0014 | 4050a1f624125cff | 4051800000000000 | c040e19c28a94569 | c3d73926 | 41cea6bd | 01 |
 
-- `x` (IEEE 754 double)
+- `x` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
 
-- `y` (IEEE 754 double)
+- `y` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
 
-- `z` (IEEE 754 double)
+- `z` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
 
-- `yaw` (IEEE 754 float)
+- `yaw` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float)
 
-- `pitch` (IEEE 754 float)
+- `pitch` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float)
 
+> This is only triggered when position happens with rotation.
+> A server packet is recieved for correction every couple seconds
 
+---
 ### Player hits something (or nothing)
 
 Eg. 
-`03002f00` - fixed packet (doesn't change)
+`03002f00`
+
 | packet length | packet type | end | 
 | - | - | - |
 | 03 | 002f | 00 | 
 
+> Note : The content of the packet does not change.
 
+---
 ### Player started sprinting
 
 
+---
 ### Player ends sprinting
