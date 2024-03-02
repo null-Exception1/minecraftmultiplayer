@@ -55,54 +55,58 @@ the 2nd and 3rd bytes are kind of like an instructor on what the packet is suppo
 
 i see how this can be useful if you want to not get ddosed with the client sending huge huge amount of packets.
 
-# client 
-# `0016` - means rotation packet
+# Client 
+##### Rotation packet
 
-the packet is 11 bytes long (excluding first byte) and looks something like this
+Eg.
+`0b 0016 c7ff6904 bf6c0811 01`
+| packet length | packet type | yaw | pitch | extras |
+| ------ | ------ | ------ | ------ | ------ | 
+| 0b | 0016 | c7ff6904 | bf6c0811 | 01 | 
 
-`b'0b0016c7ff6904bf6c081101'`
+- `yaw` (IEEE 754 float)
+- `pitch` (IEEE 754 float)
 
-`0b` 0016 c7ff6904 bf6c0811 01 (spaced for clarity)
+##### Position packet
 
-`0b` is the packet length, 0016 is packet type (rotation)
+Eg. 
+`1b 0014 4050a1f624125cff 4051800000000000 c040e19c28a94569 01`
 
-`c7ff6904` - x rotation (IEEE 754 floating point)
+| packet length | packet type | x coord | y coord | z coord | extras |
+| ------ | ------ | ------ | ------ | ------ | ------ |
+| 1b | 0014 | 4050a1f624125cff | 4051800000000000 | c040e19c28a94569 | 01 |
 
-`bf6c0811` - y rotation (IEEE 754 floating point)
+- `x` (IEEE 754 double)
 
-# `0014` - means position packet
+- `y` (IEEE 754 double)
 
-`1b 0014 4050a1f624125cff 4051800000000000 c040e19c28a94569 01`(spaced for clarity)
+- `z` (IEEE 754 double)
 
-`1b` is packet length, `0014` is packet type (position).
+##### Position + Rotation packet
 
-`4050a1f624125cff` - x (IEEE 754 double)
+Eg. 
+`23 0015 40204eab2feef243 4053800000000000 c0596a896c563537 c3d73926 41cea6bd01`
+| packet length | packet type | x coord | y coord | z coord | yaw | pitch | extras |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| 1b | 0014 | 4050a1f624125cff | 4051800000000000 | c040e19c28a94569 | c3d73926 | 41cea6bd | 01 |
 
-`4051800000000000` - y (IEEE 754 double)
+- `x` (IEEE 754 double)
 
-`c040e19c28a94569` - z (IEEE 754 double)
+- `y` (IEEE 754 double)
 
-# `0015` - means position + rotation packet
+- `z` (IEEE 754 double)
 
-`b'23001540204eab2feef2434053800000000000c0596a896c563537c3d7392641cea6bd01'`
+- `yaw` (IEEE 754 float)
 
-`23 0015 40204eab2feef243 4053800000000000 c0596a896c563537 c3d73926 41cea6bd01` (spaced for clarity)
+- `pitch` (IEEE 754 float)
 
-`23` - packet size
+##### Player hits something (or nothing)
+Eg. 
+`03002f00` - fixed packet (doesn't change)
+| packet length | packet type | end | 
+| - | - | - |
+| 03 | 002f | 00 | 
 
-`0015` - packet type (pos + rot)
+##### Player started sprinting
 
-
-`40204eab2feef243 4053800000000000 c0596a896c563537` - x,y,z
-
-`c3d73926 41cea6bd01` - yaw, pitch
-
-# `03002f00` - player hits something (or nothing)
-
-# `0600` - player started sprinting if ends with `300`
-
-# `0600` - player stopped sprinting if ends with `400`
-
-
-
-
+##### Player ends sprinting
