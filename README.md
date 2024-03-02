@@ -56,7 +56,7 @@ the 2nd and 3rd bytes are kind of like an instructor on what the packet is suppo
 i see how this can be useful if you want to not get ddosed with the client sending huge huge amount of packets.
 
 # Client 
-##### Rotation packet
+### Rotation packet
 
 Eg.
 `0b 0016 c7ff6904 bf6c0811 01`
@@ -67,7 +67,7 @@ Eg.
 - `yaw` (IEEE 754 float)
 - `pitch` (IEEE 754 float)
 
-##### Position packet
+### Position packet
 
 Eg. 
 `1b 0014 4050a1f624125cff 4051800000000000 c040e19c28a94569 01`
@@ -82,7 +82,7 @@ Eg.
 
 - `z` (IEEE 754 double)
 
-##### Position + Rotation packet
+### Position + Rotation packet
 
 Eg. 
 `23 0015 40204eab2feef243 4053800000000000 c0596a896c563537 c3d73926 41cea6bd01`
@@ -100,13 +100,13 @@ Eg.
 
 - `pitch` (IEEE 754 float)
 
-##### Player hits something (or nothing)
+### Player hits something (or nothing)
 Eg. 
 `03002f00` - fixed packet (doesn't change)
 | packet length | packet type | end | 
 | - | - | - |
 | 03 | 002f | 00 | 
 
-##### Player started sprinting
+### Player started sprinting
 
-##### Player ends sprinting
+### Player ends sprinting
