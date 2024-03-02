@@ -65,8 +65,8 @@ Eg.
 | ------ | ------ | ------ | ------ | ------ | 
 | 0b | 0016 | c7ff6904 | bf6c0811 | 01 | 
 
-- `yaw` (IEEE 754 float)
-- `pitch` (IEEE 754 float)
+- `yaw` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float)
+- `pitch` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float)
 
 > Only triggered when rotation is done without movement.
 > A server packet is recieved for correction every couple seconds.
