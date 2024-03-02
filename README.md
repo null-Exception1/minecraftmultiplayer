@@ -65,8 +65,8 @@ Eg.
 | ------ | ------ | ------ | ------ | ------ | 
 | 0b | 0016 | c7ff6904 | bf6c0811 | 01 | 
 
-- `yaw` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float)
-- `pitch` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float)
+- `yaw` is [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float
+- `pitch` is [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float
 
 > Only triggered when rotation is done without movement.
 > A server packet is recieved for correction every couple seconds.
@@ -81,11 +81,11 @@ Eg.
 | ------ | ------ | ------ | ------ | ------ | ------ |
 | 1b | 0014 | 4050a1f624125cff | 4051800000000000 | c040e19c28a94569 | 01 |
 
-- `x` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
+- `x` is [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double
 
-- `y` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
+- `y` is [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double
 
-- `z` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
+- `z` is [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double
 
 > This is only triggered when movement happens without rotation.
 > A server packet is recieved for correction every couple seconds.
@@ -98,15 +98,15 @@ Eg.
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | 1b | 0014 | 4050a1f624125cff | 4051800000000000 | c040e19c28a94569 | c3d73926 | 41cea6bd | 01 |
 
-- `x` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
+- `x` is [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double
 
-- `y` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
+- `y` is [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double
 
-- `z` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double)
+- `z` is [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double
 
-- `yaw` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float)
+- `yaw` is [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float
 
-- `pitch` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float)
+- `pitch` is [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float
 
 > This is only triggered when position happens with rotation.
 > A server packet is recieved for correction every couple seconds.
