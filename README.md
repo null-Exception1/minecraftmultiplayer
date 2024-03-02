@@ -68,7 +68,7 @@ Eg.
 - `yaw` (IEEE 754 float)
 - `pitch` (IEEE 754 float)
 
-> Only triggered when rotation is done without movement
+> Only triggered when rotation is done without movement.
 > A server packet is recieved for correction every couple seconds.
 
 ---
@@ -109,7 +109,7 @@ Eg.
 - `pitch` ([IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float)
 
 > This is only triggered when position happens with rotation.
-> A server packet is recieved for correction every couple seconds
+> A server packet is recieved for correction every couple seconds.
 
 ---
 ### Player hits something (or nothing)
