@@ -10,7 +10,7 @@ cs, addr = d.accept()
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-ip = socket.gethostbyname('pollyfish.aternos.host')
+ip = socket.gethostbyname('damselfish.aternos.host')
 s.connect((ip,50853))
 #
 s.settimeout(0.2)
@@ -47,7 +47,7 @@ while True:
                 pitch = struct.unpack('>f',binascii.unhexlify(pitch)) # (IEEE 754 floating point number)
 
                 #print('rot', yaw, pitch)
-                
+
             elif length == 35: # pos + rot
                 #print("rot",binascii.hexlify(recved))
                 x = binascii.hexlify(recved)[6:22]
