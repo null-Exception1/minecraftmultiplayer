@@ -47,6 +47,7 @@ while True:
                 pitch = struct.unpack('>f',binascii.unhexlify(pitch)) # (IEEE 754 floating point number)
 
                 #print('rot', yaw, pitch)
+                
             elif length == 35: # pos + rot
                 #print("rot",binascii.hexlify(recved))
                 x = binascii.hexlify(recved)[6:22]
