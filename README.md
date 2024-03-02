@@ -68,7 +68,7 @@ Eg.
 - `yaw` (IEEE 754 float)
 - `pitch` (IEEE 754 float)
 
-
+---
 ### Position packet
 
 Eg. 
