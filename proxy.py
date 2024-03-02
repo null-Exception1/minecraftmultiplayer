@@ -69,6 +69,7 @@ while True:
                 #print('hits something')
                 pass
             elif binascii.hexlify(recved).startswith(b'0600'):
+                print("sprint",binascii.hexlify(recved))
                 if binascii.hexlify(recved).endswith(b'300'):
                     #print('sprint start')
                     pass
