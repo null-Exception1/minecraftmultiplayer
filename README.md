@@ -45,16 +45,9 @@ while True:
 ```
 so basically i wrote a localhost transmission proxy to monitor minecraft packets between server and client.
 
+the first byte specifies the packet length. i've spaced different sections of the "example" packets for clarity, don't count spaces in the actual packets.
 
-this should be pretty ez 
-
-
-first thing im discovering is that packet lengths are specified at the beginning of a packet, very noice very interesting. looking at the minecraft wiki, i saw that the first byte always specifies the length of the total packet in the netcode.
-
-the 2nd and 3rd bytes are kind of like an instructor on what the packet is supposed to be about
-
-i see how this can be useful if you want to not get ddosed with the client sending huge huge amount of packets.
-
+this netcode is for minecraft version 1.20.1, only works for online-mode as of now.
 # Client 
 ---
 ### Rotation packet
