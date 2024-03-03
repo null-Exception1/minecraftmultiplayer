@@ -1,53 +1,15 @@
 # me do the funi 
 
-```py
-import socket
+this is a rundown of what happens in minecraft networking.
 
-d = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+to try testing stuff myself, i wrote a localhost transmission proxy to monitor minecraft packets between server and client (proxy.py)
 
-d.bind(("localhost",25565))
-d.listen()
-
-cs, addr = d.accept()
-
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-ip = socket.gethostbyname('luderick.aternos.host')
-s.connect((ip,50853))
-
-s.settimeout(1.0)
-cs.settimeout(1.0)
-
-ping = b'\x1b'
-while True:
-    try:
-        try:
-            recved = cs.recv(4096)
-            
-            if recved[0] == 27:
-                print("probs a ping to server",recved[1:100])
-                
-            print("client",recved[:100])
-            s.send(recved)
-        except socket.timeout:
-            pass
-        try:
-            recved = s.recv(4096)
-            print("server",recved[:100])
-
-            cs.send(recved)
-        except socket.timeout:
-            pass
-    except KeyboardInterrupt:
-        s.close()
-        cs.close()
-        break
-```
-so basically i wrote a localhost transmission proxy to monitor minecraft packets between server and client.
-
-the first byte specifies the packet length. i've spaced different sections of the "example" packets for clarity, don't count spaces in the actual packets.
+i've spaced different sections of the "example" packets for clarity, they aren't visible in actual packets.
 
 this netcode is for minecraft version 1.20.1, only works for online-mode as of now.
+
+i will be releasing a sort of client module for controlling a minecraft client using python.
+
 # Client 
 ---
 ### Rotation packet
