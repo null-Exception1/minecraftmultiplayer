@@ -1,12 +1,12 @@
 # me do the funi 
 
-this is a rundown of what happens in minecraft networking.
+this is a dissection of what happens in minecraft networking.
 
 to try testing stuff myself, i wrote a localhost transmission proxy to monitor minecraft packets between server and client (proxy.py)
 
 i've spaced different sections of the "example" packets for clarity, they aren't visible in actual packets.
 
-this netcode is for minecraft version 1.20.1, only works for online-mode as of now.
+this netcode protocol is for minecraft version 1.20.1, only works for online-mode as of now.
 
 i will be releasing a sort of client module for controlling a minecraft client using python.
 
