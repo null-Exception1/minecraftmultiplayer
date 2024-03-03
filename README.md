@@ -96,7 +96,7 @@ Eg.
 `23 0015 40204eab2feef243 4053800000000000 c0596a896c563537 c3d73926 41cea6bd01`
 | packet length | packet type | x coord | y coord | z coord | yaw | pitch | extras |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| 1b | 0014 | 4050a1f624125cff | 4051800000000000 | c040e19c28a94569 | c3d73926 | 41cea6bd | 01 |
+| 23 | 0015 | 40204eab2feef243 | 4053800000000000 | c0596a896c563537 | c3d73926 | 41cea6bd | 01 |
 
 - `x` is [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double
 
