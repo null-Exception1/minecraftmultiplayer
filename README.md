@@ -82,12 +82,20 @@ Eg.
 ### Player started sprinting
 
 Eg.
-`06 001eea0f 0400`
+`06 001eea0f 0300`
 
-| packet length | packet type | uuid | 
-| - | - | - |
-| 06 | 001eea0f | 0400 | 
+| packet length | packet type | uuid | sprint/stop | 
+| - | - | - | - |
+| 06 | 001e | ea0f | 0300 | 
 
 
 ---
 ### Player ends sprinting
+
+Eg.
+`06 001eea0f 0400`
+
+| packet length | packet type | uuid | sprint/stop | 
+| - | - | - | - |
+| 06 | 001e | ea0f | 0400 | 
+
