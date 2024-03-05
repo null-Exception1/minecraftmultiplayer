@@ -99,3 +99,13 @@ Eg.
 | - | - | - | - |
 | 06 | 001e | ea0f | 0400 | 
 
+> UUID part is quite weird, just copy this current thing one for one
+---
+### Switch item
+
+Eg.
+`04 002800 08` 
+
+| packet length | packet type | slot number | 
+| - | - | - |
+| 04 | 002800 | 08 |
