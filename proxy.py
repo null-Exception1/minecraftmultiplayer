@@ -10,7 +10,7 @@ cs, addr = d.accept()
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-ip = socket.gethostbyname('damselfish.aternos.host')
+ip = socket.gethostbyname('chusky.aternos.host')
 s.connect((ip,50853))
 #
 s.settimeout(0.2)
@@ -72,9 +72,11 @@ while True:
                 print("sprint",binascii.hexlify(recved))
                 if binascii.hexlify(recved).endswith(b'300'):
                     #print('sprint start')
+                    recved = binascii.unhexlify('06001ee0290300')
                     pass
                 if binascii.hexlify(recved).endswith(b'400'):
                     #print('sprint end')
+                    recved = binascii.unhexlify('06001ee0290400')
                     pass
                 pass
             else:
