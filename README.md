@@ -10,6 +10,8 @@ this netcode protocol is for minecraft version 1.20.1, only works for online-mod
 
 i will be releasing a sort of client module for controlling a minecraft client using python.
 
+# Handshake
+
 # Client 
 ---
 ### Rotation packet

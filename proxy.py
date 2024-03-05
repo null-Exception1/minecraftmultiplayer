@@ -10,7 +10,7 @@ cs, addr = d.accept()
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-ip = socket.gethostbyname('chusky.aternos.host')
+ip = socket.gethostbyname('chiweenie.aternos.host')
 s.connect((ip,50853))
 #
 s.settimeout(0.2)
@@ -80,7 +80,7 @@ while True:
                     pass
                 pass
             elif binascii.hexlify(recved).startswith(b'04002800'):
-                print("switch hotbar",int(binascii.hexlify(recved)[-1]))
+                #print("switch hotbar",recved[-1])
                 pass
             else:
                 print("client ",binascii.hexlify(recved))
@@ -89,7 +89,7 @@ while True:
             pass
         try:
             recved = s.recv(4096)
-            #print("server",recved[:100])
+            print("server",binascii.hexlify(recved[:32]))
 
             cs.send(recved)
         except socket.timeout:
