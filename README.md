@@ -70,7 +70,7 @@ Eg.
 ### Player hits something (or nothing)
 
 Eg. 
-`03002f00`
+`03 002f 00`
 
 | packet length | packet type | end | 
 | - | - | - |
@@ -82,7 +82,7 @@ Eg.
 ### Player started sprinting
 
 Eg.
-`06001eea0f0400`
+`06 001eea0f 0400`
 
 | packet length | packet type | uuid | 
 | - | - | - |
