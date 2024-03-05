@@ -79,6 +79,9 @@ while True:
                     recved = binascii.unhexlify('06001ee0290400')
                     pass
                 pass
+            elif binascii.hexlify(recved).startswith(b'04002800'):
+                print("switch hotbar",int(binascii.hexlify(recved)[-1]))
+                pass
             else:
                 print("client ",binascii.hexlify(recved))
             s.send(recved)

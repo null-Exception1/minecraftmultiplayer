@@ -100,8 +100,9 @@ Eg.
 | 06 | 001e | ea0f | 0400 | 
 
 > UUID part is quite weird, just copy this current thing one for one
+
 ---
-### Switch item
+### Switch to hotbar slot
 
 Eg.
 `04 002800 08` 
@@ -109,3 +110,6 @@ Eg.
 | packet length | packet type | slot number | 
 | - | - | - |
 | 04 | 002800 | 08 |
+
+> slot number ranges from 00-08 (1-9)
+
